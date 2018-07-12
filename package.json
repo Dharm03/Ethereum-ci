@@ -1,16 +1,30 @@
 {
   "name": "inbox",
   "version": "1.0.0",
-  "description": "",
+  "description": "jenkins reporter for mocha",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "eslint": "eslint lib/jenkins.js",
+    "test-jenkins": "JUNIT_REPORT_PATH=/report.xml mocha --colors --reporter mocha-jenkins-reporter"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Dharm03/Ethereum-ci.git"
+  },
+  "keywords": [
+    "mocha",
+    "jenkins",
+    "reporter"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "diff": "1.0.7",
+    "mkdirp": "0.5.1",
+    "xml": "^1.0.1",
     "ganache-cli": "^6.1.4",
     "mocha": "^5.2.0",
+    "mocha-jenkins-reporter": "^0.3.12",
     "solc": "0.4.19",
     "web3": "^1.0.0-beta.26"
   }
